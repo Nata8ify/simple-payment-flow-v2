@@ -1,0 +1,1 @@
+aws lambda update-function-code --function-name adapterGenerateAccount --zip-file fileb://adapterGenerateAccount.zip

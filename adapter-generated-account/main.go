@@ -1,6 +1,7 @@
 package main
 
 import (
+	"adapter-generated-account/generate"
 	"context"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
@@ -46,10 +47,10 @@ func (server *Server) mount(e *echo.Echo) {
 		}
 
 		/* Generate account */
-		account := Generate(change, index)
+		account := generate.Generate(change, index)
 
 		/* Generate keypair */
-		pvk, pub := GetKeypair(account)
+		pvk, pub := generate.GetKeypair(account)
 
 		return c.JSON(http.StatusOK, GenerateAccountResponse{
 			Address:    account.Address.String(),
