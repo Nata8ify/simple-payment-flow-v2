@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/ethereum/go-ethereum/accounts"
+	"runtime"
 	"sync"
 )
 
@@ -10,22 +11,17 @@ import (
 // the <icon src="AllIcons.Actions.Execute"/> icon in the gutter and select the <b>Run</b> menu item from here.
 
 func main() {
-	wg := sync.WaitGroup{}
 
-	//length := 1_000_000
 	generatedAccount := map[string]*accounts.Account{}
 	generatedPrivateKey := map[string]string{}
 
-	//execute(0, 10_000_000, generatedAccount, generatedPrivateKey)
-	//go execute(0, 10_000_000, generatedAccount, generatedPrivateKey)
-	//go execute(10_000_000, 20_000_000, generatedAccount, generatedPrivateKey)
-	//go execute(20_000_000, 30_000_000, generatedAccount, generatedPrivateKey)
-	//go execute(30_000_000, 40_000_000, generatedAccount, generatedPrivateKey)
-	//go execute(40_000_000, 50_000_000, generatedAccount, generatedPrivateKey)
-	//go execute(50_000_000, 60_000_000, generatedAccount, generatedPrivateKey)
+	fmt.Println("Version", runtime.Version())
+	fmt.Println("NumCPU", runtime.NumCPU())
+	//fmt.Println("GOMAXPROCS", runtime.GOMAXPROCS(60))
 
-	batch := 1_000_000
-	iterate := 60
+	batch := 3_000_000
+	iterate := 20
+	var wg sync.WaitGroup
 	wg.Add(iterate)
 	for i := 0; i < iterate; i++ {
 		go execute(i, i*batch, batch, generatedAccount, generatedPrivateKey, &wg)
