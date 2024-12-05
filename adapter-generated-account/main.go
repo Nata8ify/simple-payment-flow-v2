@@ -31,10 +31,10 @@ type GenerateAccountResponse struct {
 }
 
 func (server *Server) mount(e *echo.Echo) {
+	//e.GET("/", func(c echo.Context) error {
+	//	return c.String(http.StatusOK, "Hello, World! Ya")
+	//})
 	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World! Ya")
-	})
-	e.GET("/generate", func(c echo.Context) error {
 
 		/* Initial input parameter */
 		change, err := strconv.Atoi(c.QueryParam("change"))
