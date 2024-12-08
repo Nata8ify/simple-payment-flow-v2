@@ -1,0 +1,1 @@
+aws lambda create-function --function-name adapterSendMTHB --runtime provided.al2023 --handler bootstrap --role arn:aws:iam::675967968466:role/N8I-LambdaBasicRolw --zip-file fileb://adapterSendMTHB.zip

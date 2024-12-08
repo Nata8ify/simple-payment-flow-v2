@@ -1,0 +1,1 @@
+abigen --abi artifacts/contracts/MTHBToken.sol/MTHBToken.json --pkg internal --out generated/MTHBToken.go

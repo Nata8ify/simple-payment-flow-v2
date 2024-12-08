@@ -1,0 +1,1 @@
+aws lambda update-function-code --function-name adapterSendMTHB --zip-file fileb://adapterSendMTHB.zip
