@@ -1,4 +1,4 @@
-package internal
+package mthb
 
 import (
 	"adapter-send/internal/model"
