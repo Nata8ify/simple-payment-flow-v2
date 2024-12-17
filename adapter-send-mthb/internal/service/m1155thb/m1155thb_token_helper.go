@@ -34,7 +34,7 @@ func ExecuteSendM1155BTHBToken(client *ethclient.Client, payload *model.Payload1
 	}
 
 	/* Batch Transfer */
-	//amounts := []*big.Int{big.NewInt(1e18), big.NewInt(2e18), big.NewInt(3e18), big.NewInt(4e18)}
+	//amounts := []*big.Int{big.NewInt(1), big.NewInt(1), big.NewInt(1), big.NewInt(1)}
 	//ids := []*big.Int{big.NewInt(0), big.NewInt(1), big.NewInt(2), big.NewInt(3)}
 	//tx, err := contract.SafeBatchTransferFrom(opt, auth.From, to, ids, amounts, []byte{})
 	//if err != nil {
